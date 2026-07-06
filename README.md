@@ -13,11 +13,11 @@ Real-time hand-sign recognition with jutsu combo detection and visual effects, b
 
 ## Current Sign Set
 
-- Tora
-- Ushi
-- Ne
-- Inu
-- Tori
+- Tora = index + middle up
+- Ushi = open hand
+- Ne = index only
+- Inu = fist
+- Tori = index + pinky up
 
 ## Current Combos
 
@@ -98,7 +98,3 @@ This repository now includes .gitignore entries for:
 - __pycache__ and Python bytecode
 - local .env files
 - common editor/OS artifacts
-
-## License
-
-Add your preferred license before publishing (for example, MIT).
