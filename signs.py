@@ -1,0 +1,35 @@
+# signs.py
+# Each sign is a list: [thumb, index, middle, ring, pinky]
+# 1 = finger up, 0 = finger down, -1 = ignore (wildcard)
+
+SIGNS = {
+    "Tora":  [0, 1, 1, 0, 0],   # Tiger  - index + middle up
+    "Ushi":  [1, 1, 1, 1, 1],   # Ox     - open hand
+    "Ne":    [0, 1, 0, 0, 0],   # Rat    - index only
+    "Inu":   [-1, 0, 0, 0, 0],   # Dog    - fist
+    "Tori":  [0, 1, 0, 0, 1],   # Bird   - index + pinky up
+}
+'''
+Ne → Tora → Inu KATON FIREBALL 🔥
+Ushi → Ne → Tora SHADOW CLONE 👥
+Tori → Inu → Ushi CHIDORI ⚡
+'''
+
+def match_sign(finger_states):
+    """
+    Compares detected finger states against all defined signs.
+    Returns the sign name if matched, or None.
+    
+    -1 in a sign pattern = wildcard (ignore that finger)
+    """
+    for sign_name, pattern in SIGNS.items():
+        match = True
+        for detected, expected in zip(finger_states, pattern):
+            if expected == -1:
+                continue          # wildcard, skip this finger
+            if detected != expected:
+                match = False
+                break
+        if match:
+            return sign_name
+    return None
