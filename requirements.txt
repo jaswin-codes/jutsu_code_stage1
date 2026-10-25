@@ -1,0 +1,3 @@
+# mediapipe is pinned below 0.10.30 because later releases dropped the mp.solutions API used here
+opencv-python
+mediapipe==0.10.21

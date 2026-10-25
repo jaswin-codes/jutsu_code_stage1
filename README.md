@@ -58,7 +58,7 @@ python -m venv venv
 2. Install dependencies:
 
 ```powershell
-pip install opencv-python mediapipe
+pip install -r requirements.txt
 ```
 
 3. Run the app:
